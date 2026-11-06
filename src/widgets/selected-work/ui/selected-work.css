@@ -1,0 +1,40 @@
+.selected-work {
+  background: #070a11;
+  padding-top: 40px;
+}
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.section-heading h2 {
+  font-family: var(--display);
+  font-size: 36px;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  font-weight: 350;
+}
+.section-heading > p {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--muted);
+  max-width: 300px;
+}
+@media (max-width: 760px) {
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .section-heading h2 {
+    font-size: 30px;
+    line-height: 1.35;
+  }
+  .section-heading > p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}

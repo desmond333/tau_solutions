@@ -1,0 +1,31 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #f3f5fc;
+}
+.brand-symbol {
+  color: #bdceff;
+}
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--display);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 450;
+  letter-spacing: -0.04em;
+}
+.brand-name > span {
+  font-family: 'Onest Variable', sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 350;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  color: #9eabc4;
+}
+.brand--light {
+  color: #fff;
+}

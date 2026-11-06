@@ -1,0 +1,519 @@
+.case-art {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #101827;
+  color: #e6ecfc;
+  text-align: left;
+}
+.case-screen-reveal,
+.case-secondary-reveal {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.case-screen-reveal {
+  z-index: 2;
+}
+.case-secondary-reveal {
+  z-index: 4;
+}
+.case-art-copy {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  z-index: 3;
+  max-width: 52%;
+}
+.case-art-format {
+  display: block;
+  color: #8d9cba;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 350;
+  margin-bottom: 24px;
+}
+.case-art-copy > strong {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: 350;
+  letter-spacing: -0.04em;
+}
+.case-screen {
+  position: absolute;
+  z-index: 2;
+  right: -24px;
+  bottom: -24px;
+  width: 72%;
+  height: 370px;
+  border: 1px solid #3d4b64;
+  border-radius: 12px;
+  background: #0e131e;
+  box-shadow: 0 32px 64px rgb(0 0 0 / 0.5);
+  overflow: hidden;
+  transform: perspective(1600px) rotateY(-9deg) rotateX(4deg) rotate(-3deg);
+  transform-origin: center;
+  transition: transform 900ms var(--ease);
+}
+.case-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgb(214 234 255 / 0.1) 50%, transparent 70%);
+  transform: translateX(-150%);
+  opacity: 0;
+}
+.project-preview:hover .case-screen::after {
+  animation: screen-sweep 1.5s var(--ease);
+}
+.case-screen > img {
+  display: block;
+  width: 100%;
+  height: calc(100% - 24px);
+  object-fit: cover;
+  object-position: top;
+}
+.case-screen-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  background: #151d2c;
+  padding: 0 12px;
+  color: #697995;
+}
+.case-screen-bar > span {
+  width: 4px;
+  height: 4px;
+  background: #4d5b73;
+  border-radius: 50%;
+}
+.case-screen-bar > i {
+  font-style: normal;
+  margin: 0 auto;
+  font-size: 6px;
+  letter-spacing: 0.03em;
+}
+.case-secondary-screen {
+  position: absolute;
+  z-index: 4;
+  width: 136px;
+  height: 280px;
+  bottom: -8px;
+  left: 38%;
+  border: 4px solid #303a4d;
+  border-radius: 24px;
+  overflow: hidden;
+  transform: rotate(7deg);
+  box-shadow: 0 24px 48px rgb(0 0 0 / 0.5);
+  background: #101622;
+  transition: transform 900ms var(--ease);
+}
+.case-secondary-screen > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.case-art-orbits {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -180px;
+  top: 40px;
+  z-index: -1;
+  transform: rotate(-25deg);
+  opacity: 0.6;
+  animation: case-orbital-turn 48s infinite linear;
+}
+.case-art-orbits > i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #283b5b;
+  border-radius: 50%;
+  transform: scaleY(0.6);
+}
+.case-art-orbits > i + i {
+  inset: 32px;
+  transform: scaleY(0.6) rotate(35deg);
+}
+.case-art-orbits > span {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background: #b7cbf7;
+  border-radius: 50%;
+  right: 48px;
+  bottom: 96px;
+  box-shadow: 0 0 16px rgb(179 205 255 / 0.6);
+  animation: orbital-beacon 3s infinite alternate var(--ease);
+}
+@keyframes screen-sweep {
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+}
+@keyframes case-orbital-turn {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(335deg);
+  }
+}
+@keyframes orbital-beacon {
+  from {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+.case-art-signature {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  left: 40px;
+  bottom: 32px;
+  font-size: 10px;
+  color: #8192b1;
+  z-index: 5;
+}
+.project-preview:hover .case-screen {
+  transform: perspective(1600px) rotateY(-5deg) rotateX(2deg) rotate(-1deg) translateY(-8px);
+}
+.project-preview:hover .case-secondary-screen {
+  transform: rotate(3deg) translateY(-12px);
+}
+.case-art--life-os {
+  background: #0e192a;
+}
+.case-art--life-os .case-art-copy {
+  max-width: 40%;
+}
+.case-art--life-os .case-art-copy > strong {
+  font-size: 36px;
+}
+.case-art--life-os .case-screen {
+  right: -16px;
+  bottom: -56px;
+  width: 70%;
+  height: 430px;
+}
+.case-art--life-os .case-secondary-screen {
+  left: 32%;
+  bottom: -24px;
+  width: 148px;
+  height: 320px;
+}
+.case-art--creator-hub {
+  background: #211e2a;
+  height: 560px;
+}
+.case-art--creator-hub .case-art-copy {
+  top: 32px;
+  left: 32px;
+  max-width: 85%;
+}
+.case-art--creator-hub .case-art-copy > strong {
+  font-size: 24px;
+}
+.case-art--creator-hub .case-art-format {
+  color: #b1a5ba;
+  margin-bottom: 16px;
+}
+.case-art--creator-hub .case-art-orbits > i {
+  border-color: #554254;
+}
+.case-art--creator-hub .case-screen {
+  top: 200px;
+  right: 40px;
+  bottom: auto;
+  width: 195px;
+  height: 340px;
+  border: 5px solid #d2c8cb;
+  border-radius: 24px;
+  transform: rotate(10deg);
+  background: #f5ece5;
+}
+.case-art--creator-hub .case-screen-bar {
+  display: none;
+}
+.case-art--creator-hub .case-screen > img {
+  height: 100%;
+}
+.case-art--creator-hub .case-secondary-screen {
+  left: 32px;
+  bottom: -88px;
+  width: 185px;
+  height: 340px;
+  border-color: #6a606f;
+  transform: rotate(-12deg);
+  z-index: 1;
+}
+.case-art--creator-hub .case-art-signature {
+  color: #b1a5ba;
+  bottom: 24px;
+  left: 32px;
+  z-index: 5;
+  padding: 8px 12px;
+  background: #211e2a;
+  border-radius: 8px;
+}
+.project-preview:hover .case-art--creator-hub .case-screen {
+  transform: rotate(6deg) translateY(-8px);
+}
+.case-art--state-lab {
+  background: #141e2e;
+  height: 560px;
+}
+.case-art--state-lab .case-art-copy {
+  left: 32px;
+  top: 32px;
+  max-width: 90%;
+}
+.case-art--state-lab .case-art-copy > strong {
+  font-size: 24px;
+}
+.case-art--state-lab .case-art-format {
+  margin-bottom: 16px;
+}
+.case-art--state-lab .case-screen {
+  bottom: -8px;
+  right: -64px;
+  width: 110%;
+  height: 310px;
+  transform: perspective(1200px) rotateY(-8deg) rotateX(3deg) rotate(-5deg);
+}
+.case-lab-badge {
+  position: absolute;
+  top: 208px;
+  right: 32px;
+  color: #b9cceb;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.case-art--state-lab .case-art-signature {
+  left: 32px;
+  bottom: 24px;
+  color: #a4b9df;
+  background: #141e2e;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.case-art--party-defense {
+  background: #101921;
+  height: 560px;
+}
+.case-art--party-defense .case-art-copy {
+  max-width: 65%;
+}
+.case-art--party-defense .case-screen {
+  width: 83%;
+  height: 360px;
+  right: -24px;
+  bottom: -32px;
+  border-color: #324544;
+  transform: perspective(1600px) rotateX(5deg) rotateY(-8deg) rotate(-3deg);
+}
+.case-art--party-defense .case-art-orbits > i {
+  border-color: #29423c;
+}
+.case-art--party-defense .case-art-copy > strong {
+  font-size: 36px;
+}
+.case-art--party-defense .case-art-format {
+  color: #93afa6;
+}
+.case-art--party-defense .case-art-signature {
+  color: #9db8ae;
+  bottom: 32px;
+}
+.case-game-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  top: 48px;
+  right: 40px;
+  color: #c8dfd6;
+  font-size: 12px;
+  border: 1px solid #334c45;
+  padding: 12px 16px;
+  border-radius: 9999px;
+}
+@media (min-width: 1400px) {
+  .case-art--life-os .case-screen {
+    width: 66%;
+  }
+  .case-art--life-os .case-secondary-screen {
+    left: 35%;
+  }
+}
+@media (max-width: 1000px) {
+  .case-art-copy {
+    left: 32px;
+    top: 32px;
+  }
+  .case-art--life-os .case-art-copy > strong,
+  .case-art--party-defense .case-art-copy > strong {
+    font-size: 30px;
+  }
+  .case-art--life-os .case-secondary-screen {
+    left: 24%;
+  }
+  .case-art--life-os .case-screen {
+    width: 76%;
+  }
+  .case-art--creator-hub .case-screen {
+    right: 16px;
+    width: 165px;
+    height: 300px;
+    top: 200px;
+  }
+  .case-art--creator-hub .case-secondary-screen {
+    left: 16px;
+    width: 165px;
+    height: 300px;
+    bottom: -56px;
+  }
+  .case-art--state-lab .case-screen {
+    width: 130%;
+    right: -128px;
+  }
+  .case-art--party-defense .case-screen {
+    width: 90%;
+    height: 340px;
+  }
+}
+@media (max-width: 760px) {
+  .case-art {
+    height: 460px;
+  }
+  .case-art-copy,
+  .case-art--creator-hub .case-art-copy,
+  .case-art--state-lab .case-art-copy {
+    top: 24px;
+    left: 24px;
+    max-width: 90%;
+  }
+  .case-art-copy > strong,
+  .case-art--life-os .case-art-copy > strong,
+  .case-art--party-defense .case-art-copy > strong {
+    font-size: 24px;
+  }
+  .case-art-format {
+    margin-bottom: 16px;
+  }
+  .case-art-signature {
+    bottom: 24px;
+    left: 24px;
+    font-size: 8px;
+  }
+  .case-art--life-os .case-art-copy {
+    max-width: 90%;
+  }
+  .case-art--life-os .case-screen {
+    width: 110%;
+    height: 270px;
+    right: -112px;
+    bottom: -16px;
+  }
+  .case-art--life-os .case-secondary-screen {
+    left: 16px;
+    width: 112px;
+    height: 232px;
+    bottom: -32px;
+  }
+  .case-art--life-os .case-art-signature {
+    display: none;
+  }
+  .case-art--creator-hub {
+    height: 510px;
+  }
+  .case-art--creator-hub .case-screen {
+    top: 176px;
+    width: 190px;
+    height: 330px;
+    right: 32px;
+  }
+  .case-art--creator-hub .case-secondary-screen {
+    width: 168px;
+    height: 300px;
+    left: 24px;
+    bottom: -24px;
+  }
+  .case-art--creator-hub .case-art-signature {
+    left: 16px;
+    bottom: 16px;
+  }
+  .case-art--state-lab {
+    height: 440px;
+  }
+  .case-art--state-lab .case-screen {
+    height: 250px;
+    width: 140%;
+    bottom: -8px;
+    right: -144px;
+  }
+  .case-lab-badge {
+    top: 168px;
+    right: 24px;
+    font-size: 7px;
+  }
+  .case-art--state-lab .case-art-signature {
+    left: 16px;
+    bottom: 16px;
+    font-size: 8px;
+  }
+  .case-art--party-defense {
+    height: 440px;
+  }
+  .case-art--party-defense .case-screen {
+    width: 135%;
+    height: 230px;
+    right: -104px;
+    bottom: -16px;
+  }
+  .case-game-badge {
+    top: 168px;
+    right: 24px;
+    padding: 8px 12px;
+    font-size: 8px;
+    gap: 8px;
+  }
+  .case-game-badge svg {
+    width: 16px;
+  }
+  .case-art--party-defense .case-art-signature {
+    display: none;
+  }
+}
+@media (max-width: 370px) {
+  .case-art--creator-hub .case-screen {
+    width: 164px;
+    right: 16px;
+  }
+  .case-art--creator-hub .case-secondary-screen {
+    left: 16px;
+    width: 152px;
+  }
+}

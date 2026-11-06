@@ -1,0 +1,16 @@
+.tilt-card {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  width: 100%;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+}
+.tilt-card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 6;
+  mix-blend-mode: screen;
+}

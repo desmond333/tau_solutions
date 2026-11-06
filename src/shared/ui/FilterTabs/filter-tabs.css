@@ -1,0 +1,32 @@
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.filter-panel-motion {
+  min-width: 0;
+}
+.filter-tab {
+  padding: 8px 16px;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 300ms var(--ease),
+    color 300ms var(--ease);
+}
+.filter-tab:hover {
+  background: var(--wash);
+  color: var(--ink);
+}
+.filter-tab[data-state='active'] {
+  background: #1c2942;
+  color: #d7e3ff;
+  border-color: #536b99;
+}

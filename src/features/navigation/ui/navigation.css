@@ -1,0 +1,34 @@
+.mobile-navigation {
+  display: none;
+}
+.mobile-links {
+  display: grid;
+  margin-block: 64px;
+}
+.mobile-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 36px;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  color: var(--ink);
+  animation: menu-enter 500ms var(--ease) both;
+}
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 760px) {
+  .mobile-navigation {
+    display: block;
+  }
+}
